@@ -174,6 +174,25 @@ async fn post_process_transcription(settings: &AppSettings, transcription: &str)
         return None;
     }
 
+    // Si la plantilla pide contexto del destino, se mira qué aplicación tiene el
+    // foco y se sustituyen `${app}` y `${bundle}` antes de bifurcar hacia el modo
+    // estructurado o el heredado, para que ambos reciban el prompt ya resuelto.
+    // Solo se consulta al sistema cuando el prompt lo usa: quien no lo pida no
+    // paga la llamada.
+    let prompt = if crate::app_context::template_uses_target(&prompt) {
+        let target = crate::app_context::frontmost_app();
+        match &target {
+            Some(app) => debug!(
+                "Post-processing target application: {} ({})",
+                app.name, app.bundle_id
+            ),
+            None => debug!("Post-processing could not determine the target application"),
+        }
+        crate::app_context::expand_target_variables(&prompt, target.as_ref())
+    } else {
+        prompt
+    };
+
     debug!(
         "Starting LLM post-processing with provider '{}' (model: {})",
         provider.id, model
