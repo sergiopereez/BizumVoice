@@ -254,7 +254,7 @@ export const ModelsSettings: React.FC = () => {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder={t("settings.models.searchPlaceholder")}
-          className="w-full pl-9 pr-3 py-2 text-sm bg-mid-gray/10 border border-mid-gray/40 rounded-lg focus:outline-none focus:ring-1 focus:ring-logo-primary placeholder:text-text/40"
+          className="w-full pl-9 pr-3 py-2 text-sm bg-mid-gray/10 border border-mid-gray/40 rounded-[20px] focus:outline-none focus:ring-1 focus:ring-logo-primary placeholder:text-text/40"
         />
       </div>
 
@@ -273,7 +273,7 @@ export const ModelsSettings: React.FC = () => {
                 disabled={isRescanning}
                 title={t("settings.models.rescan.tooltip")}
                 aria-label={t("settings.models.rescan.tooltip")}
-                className="flex items-center justify-center w-8 h-8 text-sm font-medium rounded-lg bg-mid-gray/10 text-text/60 hover:bg-mid-gray/20 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex items-center justify-center w-8 h-8 text-sm font-medium rounded-[20px] bg-mid-gray/10 text-text/60 hover:bg-mid-gray/20 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <RefreshCw
                   className={`w-3.5 h-3.5 ${isRescanning ? "animate-spin" : ""}`}
@@ -288,7 +288,7 @@ export const ModelsSettings: React.FC = () => {
                 title={t("settings.models.filters.streaming")}
                 aria-label={t("settings.models.filters.streaming")}
                 aria-pressed={filterStreaming}
-                className={`flex items-center justify-center w-8 h-8 text-sm font-medium rounded-lg transition-colors ${
+                className={`flex items-center justify-center w-8 h-8 text-sm font-medium rounded-[20px] transition-colors ${
                   filterStreaming
                     ? "bg-logo-primary/20 text-logo-primary hover:bg-logo-primary/30"
                     : "bg-mid-gray/10 text-text/60 hover:bg-mid-gray/20"
@@ -302,7 +302,7 @@ export const ModelsSettings: React.FC = () => {
                 title={t("settings.models.filters.translation")}
                 aria-label={t("settings.models.filters.translation")}
                 aria-pressed={filterTranslation}
-                className={`flex items-center justify-center w-8 h-8 text-sm font-medium rounded-lg transition-colors ${
+                className={`flex items-center justify-center w-8 h-8 text-sm font-medium rounded-[20px] transition-colors ${
                   filterTranslation
                     ? "bg-logo-primary/20 text-logo-primary hover:bg-logo-primary/30"
                     : "bg-mid-gray/10 text-text/60 hover:bg-mid-gray/20"
@@ -315,7 +315,7 @@ export const ModelsSettings: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setLanguageDropdownOpen(!languageDropdownOpen)}
-                  className={`flex items-center gap-1.5 h-8 px-3 text-sm font-medium rounded-lg transition-colors ${
+                  className={`flex items-center gap-1.5 h-8 px-3 text-sm font-medium rounded-[20px] transition-colors ${
                     languageFilter !== "all"
                       ? "bg-logo-primary/20 text-logo-primary"
                       : "bg-mid-gray/10 text-text/60 hover:bg-mid-gray/20"
@@ -333,7 +333,7 @@ export const ModelsSettings: React.FC = () => {
                 </button>
 
                 {languageDropdownOpen && (
-                  <div className="absolute top-full right-0 mt-1 w-56 bg-background border border-mid-gray/80 rounded-lg shadow-lg z-50 overflow-hidden">
+                  <div className="absolute top-full right-0 mt-1 w-56 bg-background border border-mid-gray/80 rounded-[20px] shadow-lg z-50 overflow-hidden">
                     <div className="p-2 border-b border-mid-gray/40">
                       <input
                         ref={languageSearchInputRef}
@@ -356,7 +356,7 @@ export const ModelsSettings: React.FC = () => {
                         placeholder={t(
                           "settings.general.language.searchPlaceholder",
                         )}
-                        className="w-full px-2 py-1 text-sm bg-mid-gray/10 border border-mid-gray/40 rounded-md focus:outline-none focus:ring-1 focus:ring-logo-primary"
+                        className="w-full px-2 py-1 text-sm bg-mid-gray/10 border border-mid-gray/40 rounded-[14px] focus:outline-none focus:ring-1 focus:ring-logo-primary"
                       />
                     </div>
                     <div className="max-h-48 overflow-y-auto">

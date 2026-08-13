@@ -89,7 +89,7 @@ const SecureInputWarning: React.FC = () => {
         : t("secureInput.recorderBlockedNoCulprit");
 
   return (
-    <div className="w-full rounded-lg border border-warning/40 bg-warning/10 px-3 py-2.5">
+    <div className="w-full rounded-[20px] border border-warning/40 bg-warning/10 px-3 py-2.5">
       <div className="flex items-center gap-3">
         <TriangleAlert className="h-5 w-5 shrink-0 text-warning" />
         <p className="min-w-0 flex-1 text-sm font-medium leading-5">
