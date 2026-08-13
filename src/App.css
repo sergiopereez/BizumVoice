@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./styles/fonts.css";
 @import "./styles/theme.css";
 
 /* Register the shared color tokens (src/styles/theme.css) as Tailwind
@@ -16,7 +17,11 @@
 }
 
 :root {
-  /* Typography */
+  /* Typography — DM Sans es la tipografía corporativa de Bizum (ver
+     styles/fonts.css). El stack de reserva usa la fuente del sistema. */
+  font-family:
+    "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+    sans-serif;
   font-size: 15px;
   line-height: 24px;
   font-weight: 400;
