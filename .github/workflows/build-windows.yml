@@ -13,6 +13,11 @@ on: workflow_dispatch
 
 jobs:
   windows-x64:
+    # El workflow reutilizable pide `contents: write` y los permisos del que
+    # llama acotan a los del llamado: sin esto, GitHub rechaza la ejecución
+    # antes de arrancar con un error de permisos.
+    permissions:
+      contents: write
     uses: ./.github/workflows/build.yml
     with:
       platform: "windows-latest"
