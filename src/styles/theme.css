@@ -1,40 +1,49 @@
 /* Bizum Voice Colors
  *
- * Paleta corporativa de Bizum. Los valores provienen de los tokens de marca
- * publicados en bizum.com (escala `blue-*` turquesa, negro corporativo #202020
- * y la escala de grises). Mantener esta correspondencia al actualizar:
+ * Paleta alineada con la plataforma regulatoria de Bizum: la misma escala
+ * `brand-*` construida alrededor del cian corporativo #00D0DE. Se replica aquí
+ * en vez de importarse porque son dos proyectos distintos; si la escala cambia
+ * en el hub, este es el único fichero que hay que tocar.
  *
- *   blue-600 #088387   blue-500 #05C0C7   blue-400 #5EDADF
- *   blue-300 #92E0E3   blue-200 #D4F2F4   blue-100 #EFFAFB
- *   black-500 #202020  gray-400 #5A5A5A   gray-300 #979797
+ *   brand-50  #ecfeff   brand-100 #cef9fd   brand-200 #9df2fa
+ *   brand-300 #62e7f4   brand-400 #22d6e8   brand-500 #00d0de
+ *   brand-600 #00a7b6   brand-700 #087f8c   brand-800 #106571
+ *   brand-900 #12545e   brand-950 #04353e
+ *
+ * Regla heredada del hub: el cian puro NO tiene contraste suficiente como texto
+ * sobre blanco. A partir de brand-700 para texto; el cian puro queda para
+ * rellenos y superficies de acento, siempre con texto oscuro encima.
  */
 
 :root {
   /* Palette source of truth. Each themed color is defined once as a
      light/dark pair; the active tokens below and the `data-theme` overrides
      in App.css reference these, so a hex value lives in exactly one place. */
-  --light-color-text: #202020;
-  --light-color-background: #ffffff;
-  --light-color-logo-primary: #05c0c7;
-  --light-color-logo-stroke: #088387;
+  --light-color-text: #18181b;
+  --light-color-background: #f4f4f6;
+  --light-color-logo-primary: #00d0de;
+  --light-color-logo-stroke: #087f8c;
 
-  --dark-color-text: #fafafa;
-  --dark-color-background: #202020;
-  --dark-color-logo-primary: #05c0c7;
-  --dark-color-logo-stroke: #92e0e3;
+  /* En oscuro el fondo es brand-950: mantiene el carácter cian de la marca sin
+     competir con el contenido, y el logotipo sube a brand-400 porque el cian
+     puro pierde luminosidad contra un fondo oscuro. */
+  --dark-color-text: #f4f4f6;
+  --dark-color-background: #04353e;
+  --dark-color-logo-primary: #22d6e8;
+  --dark-color-logo-stroke: #9df2fa;
 
-  /* Semantic status colors. First used by SecureInputWarning; intended to
-     replace the ad-hoc yellow-500/red-500 usages (e.g. ui/Alert.tsx) over
-     time so status styling is themeable from one place. */
-  --light-color-warning: #d97706;
-  --light-color-error: #dc2626;
-  --dark-color-warning: #fbbf24;
-  --dark-color-error: #f87171;
+  /* Semantic status colors. Tomados de las escalas terciarias del hub
+     (rojo-600 / naranja-400 en claro, rojo-400 / naranja-300 en oscuro) para
+     que las alertas de las dos aplicaciones se lean igual. */
+  --light-color-warning: #e7a717;
+  --light-color-error: #d7543d;
+  --dark-color-warning: #fbbb38;
+  --dark-color-error: #ff8a72;
 
   /* Tokens that do not change between light and dark */
-  --color-background-ui: #05c0c7;
+  --color-background-ui: #00d0de;
   --color-text-stroke: #ffffff;
-  --color-mid-gray: #979797;
+  --color-mid-gray: #a1a1aa;
 
   /* Active palette — defaults to light, follows the OS via the media query
      below, or is forced by `data-theme` (see the overrides below). */
@@ -83,4 +92,10 @@
   --color-logo-stroke: var(--dark-color-logo-stroke);
   --color-warning: var(--dark-color-warning);
   --color-error: var(--dark-color-error);
+}
+
+/* Selección de texto, igual que en el hub. */
+::selection {
+  background: #cef9fd;
+  color: #04353e;
 }

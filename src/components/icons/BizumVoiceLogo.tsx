@@ -1,10 +1,10 @@
 /**
  * Logotipo de Bizum Voice.
  *
- * Wordmark tipográfico en DM Sans (la tipografía corporativa, empaquetada en
- * styles/fonts.css). "bizum" en minúsculas y turquesa corporativo, con el
- * descriptor debajo. Mantiene el viewBox del logo original (930×328) para que
- * los tamaños que ya usan Sidebar y Onboarding sigan encajando.
+ * Wordmark tipográfico en Bricolage Grotesque, la tipografía de la plataforma
+ * regulatoria (empaquetada en styles/fonts.css). "bizum" en minúsculas y cian
+ * de marca, con el descriptor debajo. Mantiene el viewBox del logo original
+ * (930×328) para que los tamaños que ya usan Sidebar y Onboarding encajen.
  *
  * Sustituir por el SVG oficial de marca cuando esté disponible.
  */
@@ -31,7 +31,7 @@ const BizumVoiceLogo = ({
       <text
         x="0"
         y="196"
-        fontFamily="'DM Sans', system-ui, sans-serif"
+        fontFamily="'Bricolage Grotesque', system-ui, sans-serif"
         fontSize="230"
         fontWeight="700"
         letterSpacing="-8"
@@ -42,7 +42,7 @@ const BizumVoiceLogo = ({
       <text
         x="6"
         y="300"
-        fontFamily="'DM Sans', system-ui, sans-serif"
+        fontFamily="'Bricolage Grotesque', system-ui, sans-serif"
         fontSize="92"
         fontWeight="500"
         letterSpacing="30"

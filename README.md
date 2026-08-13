@@ -41,16 +41,19 @@ La marca está centralizada para que un cambio se propague a toda la interfaz:
 | Elemento | Dónde vive |
 | --- | --- |
 | Paleta de color | `src/styles/theme.css` |
-| Tipografía (DM Sans) | `src/styles/fonts.css` + `public/fonts/` |
+| Tipografía (Bricolage Grotesque) | `src/styles/fonts.css` + `public/fonts/` |
 | Logotipo | `src/components/icons/BizumVoiceLogo.tsx` |
 | Icono de la app | `src/components/icons/BizumVoiceMark.tsx` |
 | Iconos del sistema | `src-tauri/icons/` |
 | Iconos de la bandeja | `src-tauri/resources/tray_*.png` |
 | Textos (24 idiomas) | `src/i18n/locales/` |
 
-Los colores provienen de los tokens de marca de Bizum (turquesa `#05C0C7`,
-`#088387`, negro `#202020`) y la tipografía es DM Sans, distribuida bajo la SIL
-Open Font License 1.1.
+La paleta es la misma que la de la plataforma regulatoria de Bizum: la escala
+`brand-*` construida alrededor del cian corporativo `#00D0DE`, con `#087f8c`
+(brand-700) para texto sobre fondo claro — el cian puro no tiene contraste
+suficiente a tamaños de lectura — y `#04353e` (brand-950) como fondo del tema
+oscuro. La tipografía es Bricolage Grotesque, también la del hub, distribuida
+bajo la SIL Open Font License 1.1 y empaquetada en la propia aplicación.
 
 ## Créditos y licencia
 

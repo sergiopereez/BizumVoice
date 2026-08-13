@@ -17,11 +17,14 @@
 }
 
 :root {
-  /* Typography — DM Sans es la tipografía corporativa de Bizum (ver
-     styles/fonts.css). El stack de reserva usa la fuente del sistema. */
+  /* Typography — Bricolage Grotesque, la misma tipografía que la plataforma
+     regulatoria (ver styles/fonts.css). `wdth` fijado a 100 como en el hub:
+     es una fuente variable y sin fijar el eje de anchura cada navegador
+     interpola a su gusto. */
   font-family:
-    "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
-    sans-serif;
+    "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    system-ui, sans-serif;
+  font-variation-settings: "wdth" 100;
   font-size: 15px;
   line-height: 24px;
   font-weight: 400;
