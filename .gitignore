@@ -45,3 +45,6 @@ result
 
 # Python bytecode (scripts/)
 __pycache__/
+
+# Directorio de compilación para empaquetar releases fuera del target de dev
+/target-release/

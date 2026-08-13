@@ -20,11 +20,13 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const baseClasses =
-    "font-medium rounded-lg border focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer";
+    "font-medium rounded-full border focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer";
 
   const variantClasses = {
+    // Texto negro sobre el cian, no blanco: es la regla del sistema de la
+    // plataforma regulatoria, y sobre #00D0DE el blanco no contrasta.
     primary:
-      "text-white bg-background-ui border-background-ui hover:bg-background-ui/80 hover:border-background-ui/80 focus:ring-1 focus:ring-background-ui",
+      "text-black bg-background-ui border-background-ui hover:bg-background-ui/80 hover:border-background-ui/80 focus:ring-1 focus:ring-background-ui",
     "primary-soft":
       "text-text bg-logo-primary/20 border-transparent hover:bg-logo-primary/30 focus:ring-1 focus:ring-logo-primary",
     secondary:
@@ -42,10 +44,12 @@ export const Button: React.FC<ButtonProps> = ({
       "text-current border-transparent hover:bg-mid-gray/10 hover:border-logo-primary focus:bg-mid-gray/20",
   };
 
+  // El padding horizontal es mayor que en un botón de esquinas rectas: con
+  // forma de píldora el texto se acerca a la curva y necesita más aire.
   const sizeClasses = {
-    sm: "px-2 py-1 text-xs",
-    md: "px-4 py-[5px] text-sm",
-    lg: "px-4 py-2 text-base",
+    sm: "px-3 py-1 text-xs",
+    md: "px-5 py-[5px] text-sm",
+    lg: "px-6 py-2 text-base",
   };
 
   return (

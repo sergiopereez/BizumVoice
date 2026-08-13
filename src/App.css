@@ -1,5 +1,16 @@
 @import "tailwindcss";
+@import "./styles/fonts.css";
 @import "./styles/theme.css";
+
+@theme {
+  /* La utilidad `font-sans` de Tailwind trae por defecto el stack del sistema:
+     sin esto, cualquier elemento con `font-sans` se salía de la tipografía de
+     marca aunque el resto de la interfaz sí la usara. Mismo valor que en la
+     plataforma regulatoria. */
+  --font-sans:
+    "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    system-ui, sans-serif;
+}
 
 /* Register the shared color tokens (src/styles/theme.css) as Tailwind
    utilities */
@@ -16,7 +27,22 @@
 }
 
 :root {
-  /* Typography */
+  /* Typography — Bricolage Grotesque, la misma tipografía que la plataforma
+     regulatoria (ver styles/fonts.css). `wdth` fijado a 100 como en el hub:
+     es una fuente variable y sin fijar el eje de anchura cada navegador
+     interpola a su gusto. */
+  font-family:
+    "Bricolage Grotesque",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    system-ui,
+    sans-serif;
+  font-variation-settings: "wdth" 100;
+  /* Bricolage trae eje de tamaño óptico: engorda ligeramente los trazos en
+     cuerpos pequeños y los afina en los grandes. En una interfaz que va de 11px
+     a titulares se nota, sobre todo en la legibilidad de las etiquetas. */
+  font-optical-sizing: auto;
   font-size: 15px;
   line-height: 24px;
   font-weight: 400;
