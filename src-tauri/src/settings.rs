@@ -758,7 +758,9 @@ fn default_post_process_prompts() -> Vec<LLMPrompt> {
 ${output}
 </transcript>
 
-The text above was dictated by voice and is about to be inserted into "${app}" (bundle id: ${bundle}).
+The text above was dictated by voice and is about to be inserted into "${app}" (process/bundle id: ${bundle}). The title of the window receiving it is: "${window}".
+
+Use the window title to tell apart what runs inside a browser or a shell: a title containing "Gmail", "Outlook" or "Mail" means a mail client even if the app is a browser; one containing "Jira", "Notion" or "Docs" means a document or ticket. When the title is "unknown", judge only by the application.
 
 First, clean the transcript: fix spelling, capitalization and punctuation, turn number words into digits, replace spoken punctuation with symbols (period → .), and drop filler words. Keep the original language of the dictation.
 
