@@ -1,8 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Cog, FlaskConical, History, Info, Sparkles, Cpu } from "lucide-react";
+import { Cog, FlaskConical, History, Info, Mic, Sparkles, Cpu } from "lucide-react";
 import BizumLogo from "./icons/BizumLogo";
-import BizumVoiceMark from "./icons/BizumVoiceMark";
 import { useSettings } from "../hooks/useSettings";
 import {
   GeneralSettings,
@@ -34,7 +33,7 @@ interface SectionConfig {
 export const SECTIONS_CONFIG = {
   general: {
     labelKey: "sidebar.general",
-    icon: BizumVoiceMark,
+    icon: Mic,
     component: GeneralSettings,
     enabled: () => true,
   },
@@ -110,7 +109,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               }`}
               onClick={() => onSectionChange(section.id)}
             >
-              <Icon width={24} height={24} className="shrink-0" />
+              <Icon size={18} strokeWidth={2.2} className="shrink-0" />
               <p
                 className="text-sm font-medium truncate"
                 title={t(section.labelKey)}
