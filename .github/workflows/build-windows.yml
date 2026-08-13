@@ -1,45 +1,22 @@
 name: "Build Windows"
 
-# Compila únicamente el instalador de Windows y lo publica como artefacto
+# Compila únicamente el instalador de Windows (x64) y lo publica como artefacto
 # descargable. El workflow "Build Test" heredado del proyecto original monta las
-# siete plataformas y firma los binarios con secretos que este fork no tiene;
+# siete plataformas y firma los binarios con secretos que este fork no tiene:
 # para probar en Windows eso es tiempo de máquina tirado y un fallo garantizado
 # en el paso de firma.
 #
 # Se lanza a mano desde la pestaña Actions o con:
-#   gh workflow run build-windows.yml --ref <rama>
+#   gh workflow run build-windows.yml --ref main
 
-on:
-  workflow_dispatch:
-    inputs:
-      arquitectura:
-        description: "Arquitectura del equipo donde se va a instalar"
-        required: true
-        default: "x64 (Intel/AMD)"
-        type: choice
-        options:
-          - "x64 (Intel/AMD)"
-          - "ARM64 (Snapdragon / Surface Pro X)"
+on: workflow_dispatch
 
 jobs:
-  x64:
-    if: inputs.arquitectura == 'x64 (Intel/AMD)'
+  windows-x64:
     uses: ./.github/workflows/build.yml
     with:
       platform: "windows-latest"
       target: "x86_64-pc-windows-msvc"
-      asset-prefix: "bizum-voice"
-      upload-artifacts: true
-      sign-binaries: false
-    secrets: inherit
-
-  arm64:
-    if: inputs.arquitectura == 'ARM64 (Snapdragon / Surface Pro X)'
-    uses: ./.github/workflows/build.yml
-    with:
-      platform: "windows-11-arm"
-      target: "aarch64-pc-windows-msvc"
-      build-args: "--target aarch64-pc-windows-msvc"
       asset-prefix: "bizum-voice"
       upload-artifacts: true
       sign-binaries: false
