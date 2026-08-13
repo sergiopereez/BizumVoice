@@ -1,6 +1,14 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Cog, FlaskConical, History, Info, Mic, Sparkles, Cpu } from "lucide-react";
+import {
+  Cog,
+  FlaskConical,
+  History,
+  Info,
+  Mic,
+  Sparkles,
+  Cpu,
+} from "lucide-react";
 import BizumLogo from "./icons/BizumLogo";
 import { useSettings } from "../hooks/useSettings";
 import {

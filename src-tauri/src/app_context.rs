@@ -176,9 +176,7 @@ pub fn expand_target_variables(template: &str, target: Option<&TargetApp>) -> St
 /// Indica si una plantilla usa alguna variable de destino. Sirve para no pagar
 /// la consulta al sistema cuando el prompt no la necesita.
 pub fn template_uses_target(template: &str) -> bool {
-    template.contains("${app}")
-        || template.contains("${bundle}")
-        || template.contains("${window}")
+    template.contains("${app}") || template.contains("${bundle}") || template.contains("${window}")
 }
 
 #[cfg(test)]
@@ -197,9 +195,16 @@ mod tests {
     fn sustituye_las_tres_variables() {
         let salida = expand_target_variables(
             "${app} · ${bundle} · ${window}",
-            Some(&app("Slack", "com.tinyspeck.slackmacgap", "general - Bizum")),
+            Some(&app(
+                "Slack",
+                "com.tinyspeck.slackmacgap",
+                "general - Bizum",
+            )),
         );
-        assert_eq!(salida, "Slack · com.tinyspeck.slackmacgap · general - Bizum");
+        assert_eq!(
+            salida,
+            "Slack · com.tinyspeck.slackmacgap · general - Bizum"
+        );
     }
 
     #[test]

@@ -852,7 +852,10 @@ fn ensure_post_process_defaults(settings: &mut AppSettings) -> bool {
             .iter()
             .any(|existing| existing.id == prompt.id)
         {
-            debug!("Adding missing default post-processing prompt '{}'", prompt.id);
+            debug!(
+                "Adding missing default post-processing prompt '{}'",
+                prompt.id
+            );
             settings.post_process_prompts.push(prompt);
             changed = true;
         }

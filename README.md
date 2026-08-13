@@ -38,15 +38,15 @@ bun run tauri build   # binario distribuible
 
 La marca está centralizada para que un cambio se propague a toda la interfaz:
 
-| Elemento | Dónde vive |
-| --- | --- |
-| Paleta de color | `src/styles/theme.css` |
-| Tipografía (Bricolage Grotesque) | `src/styles/fonts.css` + `public/fonts/` |
-| Logotipo | `src/components/icons/BizumVoiceLogo.tsx` |
-| Icono de la app | `src/components/icons/BizumVoiceMark.tsx` |
-| Iconos del sistema | `src-tauri/icons/` |
-| Iconos de la bandeja | `src-tauri/resources/tray_*.png` |
-| Textos (24 idiomas) | `src/i18n/locales/` |
+| Elemento                         | Dónde vive                                |
+| -------------------------------- | ----------------------------------------- |
+| Paleta de color                  | `src/styles/theme.css`                    |
+| Tipografía (Bricolage Grotesque) | `src/styles/fonts.css` + `public/fonts/`  |
+| Logotipo                         | `src/components/icons/BizumVoiceLogo.tsx` |
+| Icono de la app                  | `src/components/icons/BizumVoiceMark.tsx` |
+| Iconos del sistema               | `src-tauri/icons/`                        |
+| Iconos de la bandeja             | `src-tauri/resources/tray_*.png`          |
+| Textos (24 idiomas)              | `src/i18n/locales/`                       |
 
 La paleta es la misma que la de la plataforma regulatoria de Bizum: la escala
 `brand-*` construida alrededor del cian corporativo `#00D0DE`, con `#087f8c`
